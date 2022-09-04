@@ -11,8 +11,9 @@ const createVideo = async (event, ctx, callback) => {
         const id = v4()
         const key = url.includes('list=') ? url.split("v=")[1].split("&list")[0] : url.split("v=")[1]
         const newVideo = new Object()
+        const api_key = "tu api key"
 
-        await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${key}&key=AIzaSyC5CPFHBFKtzPXSV0pMdG_djB5bjFYOkYI&part=snippet,contentDetails,player`)
+        await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${key}&key=${api_key}&part=snippet,contentDetails,player`)
         .then(res => {
             let snippet = res.data.items[0].snippet
             let contentDetails = res.data.items[0].contentDetails
