@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="embed-responsive">
-        <iframe width="1230" height="655" :src="srcItem" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="1230" height="655" :src="srcItem" frameborder="0" gesture="media" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@ onMounted(() => {
     router.push('/')
   } else {
     console.log("here 2")
-    srcItem.value = item.embed
+    srcItem.value = item.embed + "?enablejsapi=1&origin=http://127.0.0.1:5173"
   }
 })
 
